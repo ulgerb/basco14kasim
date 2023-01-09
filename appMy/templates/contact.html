@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+      <!-- contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Contact Us</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                  <form class="main_form">
+                     <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                           <input class="form-control" placeholder="Name" type="text" name="Name">
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                           <input class="form-control" placeholder="Email" type="text" name="Email">
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                           <input class="form-control" placeholder="Phone" type="text" name="Phone">
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                           <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                           <button class="send">Send</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padddd">
+                  <div class="map_section">
+                     <div id="map">
+                        <iframe
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192284.13198236132!2d28.3267206328125!3d41.146758899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caac7861faadd1%3A0xf23665fac78a2f4a!2sBasco%20Vanity%20Basco%20Yapi%20San%20Ic%20Ve%20Dis%20Tic%20Ltd%20Sti!5e0!3m2!1str!2str!4v1673259720616!5m2!1str!2str"
+                           width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                           referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- end contact  -->
+{% endblock body %}

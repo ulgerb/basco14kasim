@@ -1,0 +1,35 @@
+{% load static %}
+<div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'About' %}">About</a>
+    <a href="{% url 'Services' %}">Services</a>
+    <a href="{% url 'Contact' %}">Contact</a>
+</div>
+<!-- header -->
+<header>
+    <!-- header inner -->
+    <div class="head-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'images/logo_footer.png' %}" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <ul class="email text_align_right">
+                        <li class="d_none"> <i class="fa fa-map-marker" aria-hidden="true"></i>Location</a></li>
+                        <li class="d_none"><i class="fa fa-phone" aria-hidden="true"></i>+71 1234567890</a></li>
+                        <li class="d_none"> <a href="#"><i class="fa fa-envelope"
+                                    aria-hidden="true"></i>demo@gmail.com</a></li>
+                        <li class="d_none"> <a href="#">Login <i class="fa fa-user" aria-hidden="true"></i></a> </li>
+                        <li class="d_none"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></li>
+                        <li> <button class="openbtn" onclick="openNav()"><img src="{% static 'images/menu_btn.png' %}"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header -->
