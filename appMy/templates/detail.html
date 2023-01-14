@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+    
+<style>
+    body {
+  font-family: "Nunito", sans-serif;
+  background-color: #eeeeee;
+}
+.container-space {
+  margin-top: 2rem;
+}
+.product-thumbnails {
+  display: flex;
+  margin-top: 2rem;
+}
+.product-thumbnails > ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.product-thumbnails > li {
+  margin-right: 10px;
+}
+.product-thumbnails > ul > li > img {
+  width: 100px;
+  cursor: pointer;
+}
+.thumbnail-active {
+  border: 2px solid #000;
+}
+.nav-link > img {
+  width: 40px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.btn-custom-color {
+  border: 2px solid #4fc08d;
+  color: #4fc08d;
+}
+.btn-custom-color:hover {
+  border: 2px solid #4fc08d;
+  background-color: #4fc08d;
+  color: #ffffff;
+}
+
+</style>
+{% endblock css %}
+    
+
+{% block body %}
+               
+            <div id="app">
+                <div class="container container-space">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="{{ product.image.url }}" alt="" />
+                            <div class="product-thumbnails">
+                                <ul>
+                                    <li v-for="(image, index) in productImages"
+                                        :class="[activeClass == index ? 'thumbnail-active': '']" :key="index"><img
+                                            @click="currentThumnail(image.imageUrl, index)" :src="image.imageUrl" alt="" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h1 class="my-4">{{ product.title }} - ₺{{ product.price }}</h1>
+                            <h4 v-if="stockAvailability">{{ product.text }}</h4>
+                            <h3 class="my-3">Stok: {{ product.stok }}</h3>
+                            <form action="" method="POST">
+                              {% csrf_token %}
+                              <input style="width: 50px;" type="number" name="adet" id="adet" min="1" max="{{ product.stok }}" value="1">
+                              <button type="submit" class="btn btn-outline-primary btn-lg btn-block btn-custom-color">
+                                  Sepete Ekle
+                              </button>
+                              
+                              {% if hata %}
+                                <div class="text-danger">{{ hata }}</div>
+                              {% endif %}
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+{% endblock body %}

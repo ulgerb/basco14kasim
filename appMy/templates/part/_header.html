@@ -12,18 +12,35 @@
     <div class="head-top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="logo">
                         <a href="{% url 'index' %}"><img src="{% static 'images/logo_footer.png' %}" /></a>
                     </div>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 d-flex justify-content-between">
                     <ul class="email text_align_right">
                         <li class="d_none"> <i class="fa fa-map-marker" aria-hidden="true"></i>Location</a></li>
                         <li class="d_none"><i class="fa fa-phone" aria-hidden="true"></i>+71 1234567890</a></li>
                         <li class="d_none"> <a href="#"><i class="fa fa-envelope"
-                                    aria-hidden="true"></i>demo@gmail.com</a></li>
-                        <li class="d_none"> <a href="#">Login <i class="fa fa-user" aria-hidden="true"></i></a> </li>
+                            aria-hidden="true"></i>demo@gmail.com</a></li>
+                    </ul>
+
+                    <ul class="email text_align_right">
+                        
+                        <li class="d_none"><a href="{% url 'Products' %}">Products</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="d_none"><a href="{% url 'Shoping' %}">
+                            <svg width="33" height="33" style="fill: aliceblue; padding-top: 7px;" viewBox="0 0 24 24">
+                                <path
+                                    d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" />
+                            </svg>
+                        </a></li>
+                        
+                        {% else %}
+                        
+                        <li class="d_none"> <a href="{% url 'loginUser' %}">Login <i class="fa fa-user" aria-hidden="true"></i></a> </li>
+                        {% endif %}
+                            
                         <li class="d_none"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></li>
                         <li> <button class="openbtn" onclick="openNav()"><img src="{% static 'images/menu_btn.png' %}"></button></li>
                     </ul>
